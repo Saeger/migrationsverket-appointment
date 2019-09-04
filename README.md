@@ -1,9 +1,19 @@
 # Migrationsverket Appointment Notification App
 
-# Run:
+## Getting Started
 
+This is a node app which warns you when there's an available slot in the Migrationsverket Appointment system.
+
+### Prerequisites
+
+node v6 or superior
+
+### Installing and Running:
+
+```
 npm install
 node app.js
+```
 
 Set up the timer in the app.js
 
