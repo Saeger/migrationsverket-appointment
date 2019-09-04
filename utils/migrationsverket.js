@@ -6,7 +6,7 @@ const migrationsverketStockholm = `${migrationSverketBaseUrl}&bokningstyp=2&enhe
 const migrationsverketUppsala = `${migrationSverketBaseUrl}&bokningstyp=2&enhet=MUP1&sokande=1`
 
 const mvAppointmentRequest = async (url, cityName, beepTimes) => {
-    await request(url, {json: false }, (error, { body }) => {
+    await request(url, { json: false }, (error, { body }) => {
         if (error || !body) {
             console.log('Unable to connect to migrationsverket website or to retrieve it\'s content. Trying again...')
         } else {
@@ -19,11 +19,11 @@ const mvAppointmentRequest = async (url, cityName, beepTimes) => {
     })
 }
 
-const checkForSlots = async (time, beepTimes) => {
+const checkForFreeSlots = async (time, beepTimes) => {
     await mvAppointmentRequest(migrationsverketStockholm, 'Stockholm', beepTimes)
     await mvAppointmentRequest(migrationsverketUppsala, 'Uppsala', beepTimes)
 
-    setTimeout(() => checkForSlots(time, beepTimes), time)
+    setTimeout(() => checkForFreeSlots(time, beepTimes), time)
 }
 
-module.exports = { checkForSlots }
+module.exports = { checkForFreeSlots }
