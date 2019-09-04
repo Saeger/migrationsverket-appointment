@@ -1,4 +1,4 @@
-# Migrationsverket Appointment Notification
+# Migrationsverket Appointment Notification App
 
 # Run:
 
