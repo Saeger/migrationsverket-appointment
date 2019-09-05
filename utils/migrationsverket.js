@@ -1,5 +1,6 @@
 const beep = require('beepbeep')
 const request = require('request')
+const dateFormat = require('dateformat')
 
 const migrationSverketBaseUrl = 'https://www.migrationsverket.se/ansokanbokning/valjtyp?sprak=en'
 const migrationsverketStockholm = `${migrationSverketBaseUrl}&bokningstyp=2&enhet=Z209&sokande=1`
@@ -11,7 +12,7 @@ const mvAppointmentRequest = async (url, cityName, beepTimes) => {
             console.log('Unable to connect to migrationsverket website or to retrieve it\'s content. Trying again...')
         } else {
             if (body.includes('No time slots available')) {
-                return console.log(`No slots available for ${cityName}`, new Date())
+                return console.log(`No slots available for ${cityName} on`, dateFormat(new Date(),"dddd, mmmm dS, yyyy, h:MM:ss TT"))
             }
             beep(beepTimes)
             console.log(url)
