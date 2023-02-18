@@ -2,25 +2,25 @@
 
 ## Getting Started
 
-This is a node app which warns you when there's an available slot in the Migrationsverket Appointment system.
+This is a node app written in typescript which warns you when there's an available slot in the Migrationsverket Appointment system.
 
 ### Prerequisites
 
-node v6 or superior
+Tested with Node 18 but should work with Node 12 or superior
 
 ### Installing and Running:
 
 ```
 npm install
-node app.js
+npm run start
 ```
 
 Set up the timer in the app.js
 
 # Note:
 
-1) The only service currently supported is "Fingerprint and photo"
-2) Only working for Stockholm and Uppsala
+1. The only service currently supported is "Fingerprint and photo"
+2. Only working for Stockholm, Uppsala and Örebro
 
 # Contributions
 
