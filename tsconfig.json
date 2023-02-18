@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "ESNext",
+    "incremental": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["examples", "dist", "node_modules", "src/**/*_test_cases.ts"]
+}
